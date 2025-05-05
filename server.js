@@ -26,7 +26,7 @@ const updateClients = () => {
 const fetchHolders = async () => {
   try {
     const res = await axios.get(
-      `https://api.helius.xyz/v0/token-metadata?tokenAddress=${TOKEN_ADDRESS}&api-key=${HELIUS_API_KEY}`
+      `https://api.helius.xyz/v1/token-metadata?api-key=${HELIUS_API_KEY}&tokenAddress=${TOKEN_ADDRESS}`
     );
     if (res.data && res.data.owners) {
       const newHolders = new Set(res.data.owners.map(owner => owner.owner));
